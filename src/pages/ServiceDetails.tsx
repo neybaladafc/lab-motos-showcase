@@ -2,7 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCogs,
@@ -268,18 +267,18 @@ const ServiceDetails = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="d-flex flex-column min-vh-100">
         <AnnouncementBar />
         <Navbar />
-        <main className="flex-1 flex items-center justify-center">
+        <main className="flex-grow-1 d-flex align-items-center justify-content-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <h1 className="display-4 fw-bold mb-4">
               Serviço não encontrado
             </h1>
-            <Button onClick={() => navigate("/")} variant="default">
-              <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+            <button onClick={() => navigate("/")} className="btn btn-lab-primary">
+              <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
               Voltar para Home
-            </Button>
+            </button>
           </div>
         </main>
         <Footer />
@@ -288,87 +287,88 @@ const ServiceDetails = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="d-flex flex-column min-vh-100">
       <AnnouncementBar />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-grow-1">
         {/* Hero Section with Image */}
-        <section className="relative bg-lab-black min-h-[600px] flex items-center">
-          <div className="absolute inset-0 overflow-hidden">
-            <img 
-              src={service.heroImage} 
-              alt={service.title}
-              className="w-full h-full object-cover opacity-60"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-lab-black/90 via-lab-black/70 to-transparent" />
-          </div>
+        <section 
+          className="position-relative d-flex align-items-center bg-lab-black" 
+          style={{ minHeight: '600px' }}
+        >
+          <div 
+            className="position-absolute top-0 start-0 w-100 h-100"
+            style={{
+              backgroundImage: `url(${service.heroImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.6
+            }}
+          ></div>
+          <div 
+            className="position-absolute top-0 start-0 w-100 h-100"
+            style={{
+              background: 'linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), transparent)'
+            }}
+          ></div>
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left side - Title */}
-              <div>
-                <Button
+          <div className="container position-relative">
+            <div className="row g-5 align-items-center">
+              <div className="col-md-6">
+                <button
                   onClick={() => navigate("/")}
-                  variant="ghost"
-                  className="mb-8 text-white hover:bg-white/10 hover:text-white"
+                  className="btn btn-outline-light mb-4"
                 >
-                  <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+                  <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
                   Voltar
-                </Button>
-                <h1 className="text-5xl md:text-7xl font-bold text-white uppercase tracking-tight">
+                </button>
+                <h1 className="display-3 fw-bold text-white text-uppercase">
                   {service.title}
                 </h1>
               </div>
               
-              {/* Right side - Accent text and button */}
-              <div className="text-right">
-                <div className="mb-8">
-                  <p className="text-lab-red text-xl md:text-2xl font-bold mb-2 uppercase tracking-wide">
+              <div className="col-md-6 text-md-end">
+                <div className="mb-4">
+                  <p className="text-lab-red h4 fw-bold mb-2 text-uppercase">
                     {service.accentText}
                   </p>
-                  <h2 className="text-white text-4xl md:text-6xl font-bold uppercase">
+                  <h2 className="text-white display-4 fw-bold text-uppercase">
                     {service.mainText}
                   </h2>
                 </div>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-lab-black font-semibold px-8 uppercase tracking-wide"
-                >
+                <button className="btn btn-lab-outline btn-lg px-5 text-uppercase">
                   AGENDE AGORA
-                </Button>
+                </button>
               </div>
             </div>
           </div>
         </section>
 
         {/* Description with Image Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-              {/* Left - Text */}
-              <div>
-                <h2 className="text-lab-red text-2xl md:text-3xl font-bold mb-2 uppercase">
+        <section className="py-5 bg-white">
+          <div className="container">
+            <div className="row g-5 align-items-center">
+              <div className="col-lg-6">
+                <h2 className="text-lab-red h2 fw-bold mb-2 text-uppercase">
                   Domínio
                 </h2>
-                <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6 uppercase">
+                <h3 className="display-5 fw-bold mb-4 text-uppercase">
                   Total
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="lead mb-4">
                   {service.fullDescription}
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+                <p className="fs-5 text-muted">
                   {service.description}
                 </p>
               </div>
               
-              {/* Right - Image */}
-              <div className="relative">
-                <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
+              <div className="col-lg-6">
+                <div className="position-relative">
                   <img 
                     src={service.detailImage} 
                     alt={`${service.title} detalhes`}
-                    className="w-full h-full object-cover"
+                    className="img-fluid rounded shadow-lg"
                   />
                 </div>
               </div>
@@ -377,38 +377,42 @@ const ServiceDetails = () => {
         </section>
 
         {/* Benefits and Includes */}
-        <section className="py-20 bg-lab-light">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-              {/* Benefits */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 uppercase">
+        <section className="py-5 bg-lab-light">
+          <div className="container">
+            <div className="row g-5">
+              <div className="col-lg-6">
+                <h2 className="display-6 fw-bold mb-4 text-uppercase">
                   Benefícios
                 </h2>
-                <ul className="space-y-4">
+                <ul className="list-unstyled">
                   {service.benefits.map((benefit: string, index: number) => (
-                    <li key={index} className="flex items-start gap-4">
-                      <div className="bg-lab-red text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <FontAwesomeIcon icon={faCheck} className="text-xs" />
+                    <li key={index} className="d-flex align-items-start mb-3">
+                      <div 
+                        className="bg-lab-red text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-3"
+                        style={{ width: '28px', height: '28px', marginTop: '4px' }}
+                      >
+                        <FontAwesomeIcon icon={faCheck} className="small" />
                       </div>
-                      <span className="text-foreground text-lg leading-relaxed">{benefit}</span>
+                      <span className="fs-5">{benefit}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Includes */}
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 uppercase">
+              <div className="col-lg-6">
+                <h2 className="display-6 fw-bold mb-4 text-uppercase">
                   O que está incluído
                 </h2>
-                <ul className="space-y-4">
+                <ul className="list-unstyled">
                   {service.includes.map((item: string, index: number) => (
-                    <li key={index} className="flex items-start gap-4">
-                      <div className="bg-lab-red text-white w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <FontAwesomeIcon icon={faCheck} className="text-xs" />
+                    <li key={index} className="d-flex align-items-start mb-3">
+                      <div 
+                        className="bg-lab-red text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-3"
+                        style={{ width: '28px', height: '28px', marginTop: '4px' }}
+                      >
+                        <FontAwesomeIcon icon={faCheck} className="small" />
                       </div>
-                      <span className="text-foreground text-lg leading-relaxed">{item}</span>
+                      <span className="fs-5">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -418,25 +422,45 @@ const ServiceDetails = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-lab-black relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-lab-red rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-lab-red rounded-full blur-3xl" />
+        <section className="py-5 bg-lab-black position-relative overflow-hidden">
+          <div 
+            className="position-absolute top-0 start-0 w-100 h-100"
+            style={{ opacity: 0.1 }}
+          >
+            <div 
+              className="position-absolute rounded-circle"
+              style={{
+                top: '0',
+                left: '25%',
+                width: '384px',
+                height: '384px',
+                backgroundColor: 'var(--lab-red)',
+                filter: 'blur(100px)'
+              }}
+            ></div>
+            <div 
+              className="position-absolute rounded-circle"
+              style={{
+                bottom: '0',
+                right: '25%',
+                width: '384px',
+                height: '384px',
+                backgroundColor: 'var(--lab-red)',
+                filter: 'blur(100px)'
+              }}
+            ></div>
           </div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase">
+          <div className="container text-center position-relative">
+            <h2 className="display-5 fw-bold text-white mb-4 text-uppercase">
               Agende seu serviço agora
             </h2>
-            <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="lead text-white-50 mb-5 mx-auto" style={{ maxWidth: '700px' }}>
               Entre em contato conosco e agende o melhor horário para cuidar da
               sua moto com a excelência que ela merece.
             </p>
-            <Button
-              size="lg"
-              className="bg-lab-red hover:bg-lab-red/90 text-white font-semibold px-12 py-6 text-lg uppercase tracking-wide shadow-lg hover:shadow-xl transition-all"
-            >
+            <button className="btn btn-lab-red btn-lg px-5 py-3 text-uppercase shadow-lg">
               ENTRAR EM CONTATO
-            </Button>
+            </button>
           </div>
         </section>
       </main>
