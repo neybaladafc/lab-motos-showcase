@@ -9,6 +9,10 @@ import {
   faWrench,
   faCircle,
   faOilCan,
+  faBolt,
+  faGear,
+  faCircleNotch,
+  faPaintBrush,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Index = () => {
@@ -42,32 +46,32 @@ const Index = () => {
         "Troca de óleo do motor com produtos de alta qualidade, prolongando a vida útil e melhorando o desempenho.",
     },
     {
-      id: "revisao-geral",
-      icon: faCogs,
-      title: "Revisão Geral",
+      id: "sistema-eletrico",
+      icon: faBolt,
+      title: "Sistema Elétrico",
       description:
-        "Check-up completo de todos os sistemas da sua moto, garantindo segurança e desempenho máximo em cada componente.",
+        "Diagnóstico e manutenção completa do sistema elétrico, incluindo bateria, fiação e componentes eletrônicos.",
     },
     {
-      id: "suspensao",
-      icon: faWrench,
-      title: "Suspensão",
+      id: "corrente-transmissao",
+      icon: faGear,
+      title: "Corrente e Transmissão",
       description:
-        "Ajuste e manutenção do sistema de suspensão para conforto e estabilidade superior em qualquer terreno.",
+        "Manutenção e ajuste de corrente, coroa e pinhão, garantindo transmissão de potência eficiente e durável.",
     },
     {
-      id: "freios",
-      icon: faCircle,
-      title: "Freios",
+      id: "pneus-rodas",
+      icon: faCircleNotch,
+      title: "Pneus e Rodas",
       description:
-        "Revisão completa do sistema de freios, essencial para sua segurança. Verificamos pastilhas, discos e fluidos.",
+        "Troca de pneus, balanceamento e alinhamento de rodas para máxima aderência e segurança em todas as condições.",
     },
     {
-      id: "troca-oleo",
-      icon: faOilCan,
-      title: "Troca de Óleo",
+      id: "customizacao-acessorios",
+      icon: faPaintBrush,
+      title: "Customização e Acessórios",
       description:
-        "Troca de óleo do motor com produtos de alta qualidade, prolongando a vida útil e melhorando o desempenho.",
+        "Instalação de acessórios e customizações para deixar sua moto com sua identidade e ainda mais funcional.",
     },
   ];
 
