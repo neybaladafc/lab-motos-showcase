@@ -235,15 +235,6 @@ function showServiceDetail(serviceId) {
 
   // Build detail page HTML
   const detailHTML = `
-    <!-- Announcement Bar -->
-    <div class="bg-lab-black text-white py-2 overflow-hidden">
-      <div class="animate-marquee">
-        <span style="font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em;">
-          NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. 
-        </span>
-      </div>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-lab-dark sticky-top">
       <div class="container">
