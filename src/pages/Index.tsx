@@ -14,48 +14,56 @@ import {
 const Index = () => {
   const services = [
     {
+      id: "revisao-geral",
       icon: faCogs,
       title: "Revisão Geral",
       description:
         "Check-up completo de todos os sistemas da sua moto, garantindo segurança e desempenho máximo em cada componente.",
     },
     {
+      id: "suspensao",
       icon: faWrench,
       title: "Suspensão",
       description:
         "Ajuste e manutenção do sistema de suspensão para conforto e estabilidade superior em qualquer terreno.",
     },
     {
+      id: "freios",
       icon: faCircle,
       title: "Freios",
       description:
         "Revisão completa do sistema de freios, essencial para sua segurança. Verificamos pastilhas, discos e fluidos.",
     },
     {
+      id: "troca-oleo",
       icon: faOilCan,
       title: "Troca de Óleo",
       description:
         "Troca de óleo do motor com produtos de alta qualidade, prolongando a vida útil e melhorando o desempenho.",
     },
     {
+      id: "revisao-geral",
       icon: faCogs,
       title: "Revisão Geral",
       description:
         "Check-up completo de todos os sistemas da sua moto, garantindo segurança e desempenho máximo em cada componente.",
     },
     {
+      id: "suspensao",
       icon: faWrench,
       title: "Suspensão",
       description:
         "Ajuste e manutenção do sistema de suspensão para conforto e estabilidade superior em qualquer terreno.",
     },
     {
+      id: "freios",
       icon: faCircle,
       title: "Freios",
       description:
         "Revisão completa do sistema de freios, essencial para sua segurança. Verificamos pastilhas, discos e fluidos.",
     },
     {
+      id: "troca-oleo",
       icon: faOilCan,
       title: "Troca de Óleo",
       description:
@@ -81,6 +89,7 @@ const Index = () => {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
+                  serviceId={service.id}
                 />
               ))}
             </div>
