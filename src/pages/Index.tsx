@@ -85,9 +85,9 @@ const Index = () => {
         
         <section className="bg-lab-light py-5" id="servicos">
           <div className="container">
-            <div className="row g-4">
+            <div className="row g-4 align-items-stretch">
               {services.map((service, index) => (
-                <div key={index} className="col-lg-3 col-md-6">
+                <div key={index} className="col-lg-3 col-md-6 d-flex">
                   <ServiceCard
                     icon={service.icon}
                     title={service.title}

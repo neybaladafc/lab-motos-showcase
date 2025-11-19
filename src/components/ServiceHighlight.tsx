@@ -1,12 +1,16 @@
 import serviceRevision from "@/assets/service-revision.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ServiceHighlight = () => {
+  const leftRef = useScrollReveal();
+  const rightRef = useScrollReveal();
+
   return (
     <section className="py-5 bg-white">
       <div className="container">
         <div className="row align-items-center g-5">
           <div className="col-lg-6">
-            <div className="pe-lg-4">
+            <div ref={leftRef} className="pe-lg-4 scroll-reveal-left">
               <h2 className="display-5 fw-bold text-uppercase mb-3">
                 <span className="text-lab-red">Cuidamos</span> da sua moto
               </h2>
@@ -26,7 +30,7 @@ const ServiceHighlight = () => {
           </div>
           
           <div className="col-lg-6">
-            <div className="position-relative">
+            <div ref={rightRef} className="position-relative scroll-reveal-right">
               <img 
                 src={serviceRevision} 
                 alt="Revisão de moto" 
