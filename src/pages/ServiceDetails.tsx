@@ -11,11 +11,19 @@ import {
   faOilCan,
   faArrowLeft,
   faCheck,
+  faBolt,
+  faGear,
+  faCircleNotch,
+  faPaintBrush,
 } from "@fortawesome/free-solid-svg-icons";
 import serviceWorkshop from "@/assets/service-workshop-1.jpg";
 import serviceSuspension from "@/assets/service-suspension.jpg";
 import serviceBrakes from "@/assets/service-brakes.jpg";
 import serviceOil from "@/assets/service-oil.jpg";
+import serviceElectrical from "@/assets/service-electrical.jpg";
+import serviceChain from "@/assets/service-chain.jpg";
+import serviceTires from "@/assets/service-tires.jpg";
+import serviceCustom from "@/assets/service-custom.jpg";
 
 const serviceData: Record<string, any> = {
   "revisao-geral": {
@@ -132,6 +140,122 @@ const serviceData: Record<string, any> = {
       "Inspeção visual do motor",
       "Descarte ecológico do óleo usado",
       "Registro de quilometragem",
+    ],
+  },
+  "sistema-eletrico": {
+    icon: faBolt,
+    title: "Sistema Elétrico",
+    subtitle: "Energia e performance sem falhas",
+    accentText: "DIAGNÓSTICO",
+    mainText: "PRECISO",
+    description:
+      "Diagnóstico e manutenção completa do sistema elétrico, incluindo bateria, fiação e componentes eletrônicos da sua motocicleta.",
+    fullDescription:
+      "O sistema elétrico da sua moto é fundamental para o funcionamento de todos os componentes. Na LAB Motos, utilizamos equipamentos de diagnóstico de última geração para identificar e resolver qualquer problema elétrico, desde bateria até sistemas eletrônicos complexos.",
+    heroImage: serviceElectrical,
+    detailImage: serviceElectrical,
+    benefits: [
+      "Diagnóstico completo com equipamentos modernos",
+      "Prevenção de panes elétricas",
+      "Maior confiabilidade do sistema",
+      "Otimização do consumo de energia",
+      "Identificação precoce de problemas",
+      "Garantia nos serviços realizados",
+    ],
+    includes: [
+      "Teste completo da bateria",
+      "Verificação de alternador e regulador",
+      "Inspeção de chicotes elétricos",
+      "Teste de componentes eletrônicos",
+      "Verificação de sistema de iluminação",
+      "Diagnóstico de injeção eletrônica",
+    ],
+  },
+  "corrente-transmissao": {
+    icon: faGear,
+    title: "Corrente e Transmissão",
+    subtitle: "Transmissão de potência eficiente",
+    accentText: "POTÊNCIA",
+    mainText: "OTIMIZADA",
+    description:
+      "Manutenção e ajuste de corrente, coroa e pinhão, garantindo transmissão de potência eficiente e durável para sua moto.",
+    fullDescription:
+      "A transmissão é responsável por entregar a potência do motor às rodas de forma eficiente. Na LAB Motos, realizamos manutenção completa do sistema de transmissão, incluindo corrente, coroa e pinhão, garantindo máxima eficiência e durabilidade.",
+    heroImage: serviceChain,
+    detailImage: serviceChain,
+    benefits: [
+      "Transmissão de potência otimizada",
+      "Maior vida útil dos componentes",
+      "Redução de ruído e vibração",
+      "Melhor economia de combustível",
+      "Manutenção preventiva completa",
+      "Ajustes precisos de tensão",
+    ],
+    includes: [
+      "Limpeza e lubrificação da corrente",
+      "Verificação de desgaste de coroa e pinhão",
+      "Ajuste preciso de tensão",
+      "Alinhamento do conjunto",
+      "Inspeção de rolamentos",
+      "Recomendações de substituição",
+    ],
+  },
+  "pneus-rodas": {
+    icon: faCircleNotch,
+    title: "Pneus e Rodas",
+    subtitle: "Aderência e segurança em cada curva",
+    accentText: "ADERÊNCIA",
+    mainText: "PERFEITA",
+    description:
+      "Troca de pneus, balanceamento e alinhamento de rodas para máxima aderência e segurança em todas as condições de pilotagem.",
+    fullDescription:
+      "Os pneus são o único ponto de contato da sua moto com o solo, sendo fundamentais para segurança e performance. Na LAB Motos, oferecemos serviço completo de pneus e rodas, desde a escolha do modelo ideal até instalação e balanceamento profissional.",
+    heroImage: serviceTires,
+    detailImage: serviceTires,
+    benefits: [
+      "Maior segurança em curvas e frenagens",
+      "Aderência otimizada em todas condições",
+      "Desgaste uniforme dos pneus",
+      "Melhor estabilidade em altas velocidades",
+      "Conforto superior de pilotagem",
+      "Consultoria para escolha do pneu ideal",
+    ],
+    includes: [
+      "Troca de pneus com desmontagem profissional",
+      "Balanceamento dinâmico de rodas",
+      "Verificação de pressão e válvulas",
+      "Inspeção de aros e raios",
+      "Alinhamento quando necessário",
+      "Descarte ecológico dos pneus velhos",
+    ],
+  },
+  "customizacao-acessorios": {
+    icon: faPaintBrush,
+    title: "Customização e Acessórios",
+    subtitle: "Personalize sua moto do seu jeito",
+    accentText: "ESTILO",
+    mainText: "ÚNICO",
+    description:
+      "Instalação de acessórios e customizações para deixar sua moto com sua identidade e ainda mais funcional no dia a dia.",
+    fullDescription:
+      "Torne sua moto única com nosso serviço de customização e instalação de acessórios. Na LAB Motos, trabalhamos com as melhores marcas do mercado e realizamos instalações profissionais que preservam a garantia e segurança da sua motocicleta.",
+    heroImage: serviceCustom,
+    detailImage: serviceCustom,
+    benefits: [
+      "Moto personalizada com sua identidade",
+      "Instalação profissional garantida",
+      "Acessórios das melhores marcas",
+      "Maior funcionalidade no dia a dia",
+      "Valorização da motocicleta",
+      "Consultoria especializada",
+    ],
+    includes: [
+      "Instalação de escapamentos esportivos",
+      "Montagem de baús e alforges",
+      "Instalação de protetores",
+      "Aplicação de películas e adesivos",
+      "Instalação de iluminação LED",
+      "Montagem de para-brisas e bolhas",
     ],
   },
 };
