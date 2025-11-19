@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -267,6 +268,7 @@ const ServiceDetails = () => {
   if (!service) {
     return (
       <div className="d-flex flex-column min-vh-100">
+        <AnnouncementBar />
         <Navbar />
         <main className="flex-grow-1 d-flex align-items-center justify-content-center">
           <div className="text-center">
@@ -286,6 +288,7 @@ const ServiceDetails = () => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
+      <AnnouncementBar />
       <Navbar />
       <main className="flex-grow-1">
         {/* Hero Section with Image */}

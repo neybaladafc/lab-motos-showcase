@@ -108,6 +108,19 @@ body {
   animation: fadeInUp 0.6s ease-out;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
 
 @keyframes fadeIn {
   from {

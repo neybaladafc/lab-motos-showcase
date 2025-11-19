@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Hero from "@/components/Hero";
 import ServiceHighlight from "@/components/ServiceHighlight";
 import ServiceCard from "@/components/ServiceCard";
@@ -76,6 +77,7 @@ const Index = () => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
+      <AnnouncementBar />
       <Navbar />
       <main className="flex-grow-1">
         <Hero />
