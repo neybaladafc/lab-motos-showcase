@@ -1,14 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
   icon: IconDefinition;
   title: string;
   description: string;
+  serviceId: string;
 }
 
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, serviceId }: ServiceCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/servico/${serviceId}`);
+  };
+
   return (
     <div className="bg-card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border">
       <div className="flex flex-col items-center text-center space-y-4">
@@ -18,6 +26,7 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
         <h3 className="text-xl font-bold text-foreground">{title}</h3>
         <p className="text-muted-foreground leading-relaxed">{description}</p>
         <Button
+          onClick={handleClick}
           variant="default"
           className="bg-lab-black hover:bg-lab-black/90 text-white font-semibold px-6 mt-4 transition-transform hover:scale-105"
         >
