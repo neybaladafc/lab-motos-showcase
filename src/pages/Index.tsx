@@ -83,8 +83,16 @@ const Index = () => {
         <Hero />
         <ServiceHighlight />
         
-        <section className="bg-lab-light py-5" id="servicos">
-          <div className="container">
+        <section className="bg-white py-5" id="servicos">
+          <div className="container py-5">
+            <div className="text-center mb-5">
+              <p className="text-uppercase mb-2 fw-semibold" style={{ letterSpacing: '0.1em', fontSize: '0.9rem' }}>
+                NOSSOS
+              </p>
+              <h2 className="display-4 fw-bold text-uppercase mb-3">
+                SERVIÇOS
+              </h2>
+            </div>
             <div className="row g-4">
               {services.map((service, index) => (
                 <div key={index} className="col-lg-3 col-md-6">
