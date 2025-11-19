@@ -223,10 +223,11 @@ function showServiceDetail(serviceId) {
   const service = serviceData[serviceId];
   if (!service) return;
 
+  const mainContent = document.querySelector('body > section, body > footer');
   const detailSection = document.getElementById('service-detail');
   
-  // Hide main content including navbar
-  document.querySelectorAll('body > nav, body > section, body > footer').forEach(el => {
+  // Hide main content
+  document.querySelectorAll('body > section, body > nav + div, body > footer').forEach(el => {
     if (el.id !== 'service-detail') {
       el.style.display = 'none';
     }
@@ -425,8 +426,8 @@ function hideServiceDetail() {
   detailSection.classList.add('d-none');
   detailSection.innerHTML = '';
   
-  // Show main content including navbar
-  document.querySelectorAll('body > nav, body > section, body > footer').forEach(el => {
+  // Show main content
+  document.querySelectorAll('body > section, body > nav + div, body > footer').forEach(el => {
     if (el.id !== 'service-detail') {
       el.style.display = '';
     }
