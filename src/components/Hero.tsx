@@ -2,38 +2,31 @@ import heroImage from "@/assets/hero-motorcycle.jpg";
 
 const Hero = () => {
   return (
-    <section className="bg-muted py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
-            Serviços
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-            Excelência técnica e paixão em cada detalhe
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-5 gap-8 items-center">
-          {/* Left Column - 60% (3 cols) */}
-          <div className="md:col-span-3 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              CONHEÇA OS NOSSOS SERVIÇOS
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Na LAB Motos, cada serviço é feito com precisão e foco absoluto em
-              desempenho. Cuidamos da sua moto como se fosse nossa, pois conhecemos
-              profundamente o que te move.
-            </p>
-          </div>
-
-          {/* Right Column - 40% (2 cols) */}
-          <div className="md:col-span-2">
-            <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={heroImage}
-                alt="Moto esportiva na oficina LAB Motos"
-                className="w-full h-full object-cover"
-              />
+    <section 
+      className="position-relative d-flex align-items-center" 
+      style={{ 
+        minHeight: '600px',
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark" style={{ opacity: 0.7 }}></div>
+      
+      <div className="container position-relative">
+        <div className="row">
+          <div className="col-lg-8">
+            <div className="text-white animate-fade-in-up">
+              <h1 className="display-3 fw-bold mb-4 text-uppercase">
+                Excelência Técnica e Paixão em Cada Detalhe
+              </h1>
+              <p className="lead mb-4 fs-5">
+                A LAB MOTOS nasceu da paixão por motos e do compromisso em elevar o padrão das oficinas,
+                unindo técnica, confiança e transparência.
+              </p>
+              <button className="btn btn-lab-red btn-lg px-5">
+                AGENDE SEU SERVIÇO
+              </button>
             </div>
           </div>
         </div>

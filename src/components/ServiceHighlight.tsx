@@ -1,52 +1,38 @@
-import serviceImage from "@/assets/service-revision.jpg";
-import { Button } from "@/components/ui/button";
+import serviceRevision from "@/assets/service-revision.jpg";
 
 const ServiceHighlight = () => {
   return (
-    <section className="bg-accent py-20">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-5 gap-8 items-center">
-          {/* Left Column - 40% (2 cols) */}
-          <div className="md:col-span-2">
-            <div className="aspect-square w-full rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={serviceImage}
-                alt="Revisão Geral - Mecânico trabalhando em moto"
-                className="w-full h-full object-cover"
-              />
+    <section className="py-5 bg-white">
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6">
+            <div className="pe-lg-4">
+              <h2 className="display-5 fw-bold text-uppercase mb-3">
+                <span className="text-lab-red">Cuidamos</span> da sua moto
+              </h2>
+              <h3 className="h4 text-uppercase mb-4">Como se fosse nossa</h3>
+              <p className="lead mb-4">
+                Cada motocicleta que entra na LAB MOTOS recebe atenção especial e cuidado profissional.
+                Nossa equipe de mecânicos especializados trata cada moto como se fosse sua própria.
+              </p>
+              <p className="mb-4">
+                Com anos de experiência e conhecimento profundo em diversos modelos, oferecemos
+                serviços de manutenção e reparo com precisão técnica e paixão genuína por motocicletas.
+              </p>
+              <button className="btn btn-lab-primary">
+                CONHEÇA NOSSOS SERVIÇOS
+              </button>
             </div>
           </div>
-
-          {/* Right Column - 60% (3 cols) */}
-          <div className="md:col-span-3 space-y-6">
-            <div className="inline-block bg-lab-black text-white px-4 py-2 rounded-md text-sm font-semibold tracking-wider">
-              REVISÃO
+          
+          <div className="col-lg-6">
+            <div className="position-relative">
+              <img 
+                src={serviceRevision} 
+                alt="Revisão de moto" 
+                className="img-fluid rounded shadow-lg"
+              />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Geral
-            </h2>
-            <div className="space-y-4 text-lg text-foreground">
-              <p>
-                Nossa revisão geral é um check-up completo que garante a segurança e
-                o desempenho ideal da sua moto. Analisamos cada componente com
-                atenção aos detalhes.
-              </p>
-              <p>
-                Verificamos sistema de freios, suspensão, motor, transmissão,
-                sistema elétrico e muito mais. Tudo para que você tenha a melhor
-                experiência de pilotagem.
-              </p>
-              <p>
-                Utilizamos apenas peças originais e técnicas avançadas, garantindo
-                a longevidade e confiabilidade do seu veículo.
-              </p>
-            </div>
-            <Button
-              variant="default"
-              className="bg-lab-black hover:bg-lab-black/90 text-white font-semibold px-8 py-6 text-base transition-transform hover:scale-105"
-            >
-              SAIBA MAIS
-            </Button>
           </div>
         </div>
       </div>

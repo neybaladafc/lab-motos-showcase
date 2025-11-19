@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
@@ -18,20 +17,20 @@ const ServiceCard = ({ icon, title, description, serviceId }: ServiceCardProps) 
   };
 
   return (
-    <div className="bg-card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border">
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div className="bg-lab-black text-white w-16 h-16 rounded-full flex items-center justify-center">
-          <FontAwesomeIcon icon={icon} className="text-2xl" />
+    <div className="card h-100 border-0 shadow-sm card-hover">
+      <div className="card-body text-center p-4">
+        <div className="bg-lab-black text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
+             style={{ width: '64px', height: '64px' }}>
+          <FontAwesomeIcon icon={icon} size="2x" />
         </div>
-        <h3 className="text-xl font-bold text-foreground">{title}</h3>
-        <p className="text-muted-foreground leading-relaxed">{description}</p>
-        <Button
+        <h3 className="card-title h5 fw-bold mb-3">{title}</h3>
+        <p className="card-text text-muted mb-4">{description}</p>
+        <button
           onClick={handleClick}
-          variant="default"
-          className="bg-lab-black hover:bg-lab-black/90 text-white font-semibold px-6 mt-4 transition-transform hover:scale-105"
+          className="btn btn-lab-primary w-100"
         >
           SAIBA MAIS
-        </Button>
+        </button>
       </div>
     </div>
   );

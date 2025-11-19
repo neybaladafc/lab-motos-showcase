@@ -1,11 +1,11 @@
 const AnnouncementBar = () => {
-  const announcement = "ANUNCIO ANUNCIO ANUNCIO ANUNCIO ";
+  const announcement = "NOVIDADE: Agendamento online disponível! Entre em contato pelo WhatsApp. ";
   const repeatedText = announcement.repeat(10);
 
   return (
     <div className="bg-lab-black text-white py-2 overflow-hidden">
-      <div className="animate-marquee whitespace-nowrap">
-        <span className="inline-block font-medium text-sm tracking-wider">
+      <div className="animate-marquee">
+        <span style={{ fontWeight: 500, fontSize: '0.875rem', letterSpacing: '0.05em' }}>
           {repeatedText}
         </span>
       </div>
