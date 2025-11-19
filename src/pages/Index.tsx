@@ -1,12 +1,93 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Hero from "@/components/Hero";
+import ServiceHighlight from "@/components/ServiceHighlight";
+import ServiceCard from "@/components/ServiceCard";
+import Footer from "@/components/Footer";
+import {
+  faCogs,
+  faWrench,
+  faCircle,
+  faOilCan,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Index = () => {
+  const services = [
+    {
+      icon: faCogs,
+      title: "Revisão Geral",
+      description:
+        "Check-up completo de todos os sistemas da sua moto, garantindo segurança e desempenho máximo em cada componente.",
+    },
+    {
+      icon: faWrench,
+      title: "Suspensão",
+      description:
+        "Ajuste e manutenção do sistema de suspensão para conforto e estabilidade superior em qualquer terreno.",
+    },
+    {
+      icon: faCircle,
+      title: "Freios",
+      description:
+        "Revisão completa do sistema de freios, essencial para sua segurança. Verificamos pastilhas, discos e fluidos.",
+    },
+    {
+      icon: faOilCan,
+      title: "Troca de Óleo",
+      description:
+        "Troca de óleo do motor com produtos de alta qualidade, prolongando a vida útil e melhorando o desempenho.",
+    },
+    {
+      icon: faCogs,
+      title: "Revisão Geral",
+      description:
+        "Check-up completo de todos os sistemas da sua moto, garantindo segurança e desempenho máximo em cada componente.",
+    },
+    {
+      icon: faWrench,
+      title: "Suspensão",
+      description:
+        "Ajuste e manutenção do sistema de suspensão para conforto e estabilidade superior em qualquer terreno.",
+    },
+    {
+      icon: faCircle,
+      title: "Freios",
+      description:
+        "Revisão completa do sistema de freios, essencial para sua segurança. Verificamos pastilhas, discos e fluidos.",
+    },
+    {
+      icon: faOilCan,
+      title: "Troca de Óleo",
+      description:
+        "Troca de óleo do motor com produtos de alta qualidade, prolongando a vida útil e melhorando o desempenho.",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <AnnouncementBar />
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+        <ServiceHighlight />
+        
+        {/* Services Grid */}
+        <section className="bg-lab-light py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };
