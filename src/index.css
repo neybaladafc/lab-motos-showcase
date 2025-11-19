@@ -1,122 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+:root {
+  /* LAB Motos Color Palette */
+  --lab-red: #d32f2f;
+  --lab-black: #000000;
+  --lab-dark-gray: #2c2c2c;
+  --lab-footer-gray: #3c3c3c;
+  --lab-light: #e8e8e8;
+  --lab-light-alt: #d3d3d3;
+  --lab-text: #1a1a1a;
+}
 
-@layer base {
-  :root {
-    /* LAB Motos Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Montserrat', 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--lab-text);
+}
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+/* Custom Button Styles */
+.btn-lab-primary {
+  background-color: var(--lab-black);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+.btn-lab-primary:hover {
+  background-color: #333;
+  color: white;
+  transform: scale(1.05);
+}
 
-    /* Primary Red */
-    --primary: 0 65% 51%;
-    --primary-foreground: 0 0% 100%;
+.btn-lab-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
 
-    /* Dark Gray */
-    --secondary: 0 0% 17%;
-    --secondary-foreground: 0 0% 100%;
+.btn-lab-outline:hover {
+  background-color: white;
+  color: var(--lab-black);
+}
 
-    /* Light Gray */
-    --muted: 0 0% 91%;
-    --muted-foreground: 0 0% 45%;
+.btn-lab-red {
+  background-color: var(--lab-red);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
 
-    /* Medium Gray */
-    --accent: 0 0% 77%;
-    --accent-foreground: 0 0% 10%;
+.btn-lab-red:hover {
+  background-color: #b71c1c;
+  color: white;
+  box-shadow: 0 4px 20px rgba(211, 47, 47, 0.4);
+}
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+/* Custom Backgrounds */
+.bg-lab-light {
+  background-color: var(--lab-light);
+}
 
-    --border: 0 0% 91%;
-    --input: 0 0% 91%;
-    --ring: 0 65% 51%;
+.bg-lab-dark {
+  background-color: var(--lab-dark-gray);
+}
 
-    --radius: 0.5rem;
-    
-    /* LAB Motos Custom Colors */
-    --lab-black: 0 0% 0%;
-    --lab-dark-gray: 0 0% 17%;
-    --lab-medium-gray: 0 0% 77%;
-    --lab-light-gray: 0 0% 91%;
-    --lab-lighter-gray: 0 0% 96%;
-    
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.bg-lab-black {
+  background-color: var(--lab-black);
+}
 
-    --sidebar-background: 0 0% 98%;
+.bg-lab-footer {
+  background-color: var(--lab-footer-gray);
+}
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+/* Text Colors */
+.text-lab-red {
+  color: var(--lab-red);
+}
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 17%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 17%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 65% 51%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 23%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 23%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 0% 30%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 23%;
-    --input: 0 0% 23%;
-    --ring: 0 65% 51%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+  to {
+    transform: translateX(-50%);
   }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }

@@ -76,25 +76,25 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="d-flex flex-column min-vh-100">
       <AnnouncementBar />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-grow-1">
         <Hero />
         <ServiceHighlight />
         
-        {/* Services Grid */}
-        <section className="bg-lab-light py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="bg-lab-light py-5" id="servicos">
+          <div className="container">
+            <div className="row g-4">
               {services.map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  serviceId={service.id}
-                />
+                <div key={index} className="col-lg-3 col-md-6">
+                  <ServiceCard
+                    icon={service.icon}
+                    title={service.title}
+                    description={service.description}
+                    serviceId={service.id}
+                  />
+                </div>
               ))}
             </div>
           </div>
